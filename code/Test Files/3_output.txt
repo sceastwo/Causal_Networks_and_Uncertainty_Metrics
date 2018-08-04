@@ -1,0 +1,30 @@
+new s "R" <  new s "V" <  new s "S" <  new s "C" <  new dx 0.356000 *  ,  new dx 0.000000 *  ,  ref 5  >  ,  new s "C" <  ref 5  ,  ref 5  ,  ref 5  >  ,  ref 6  ,  ref 6  >  ,  new s "S" <  ref 6  ,  ref 6  ,  ref 6  ,  ref 6  >  >  ,  new s "V" <  new s "S" <  new s "C" <  new dx 0.097900 *  ,  ref 5  ,  ref 5  >  ,  ref 6  ,  ref 6  ,  new s "C" <  ref 5  ,  ref 5  ,  new dx 0.026700 *  >  >  ,  ref 7  >  ,  new s "V" <  new s "S" <  new s "C" <  ref 13  ,  ref 5  ,  ref 5  >  ,  ref 6  ,  ref 6  ,  new s "C" <  ref 5  ,  ref 5  ,  new dx 0.035600 *  >  >  ,  ref 7  >  > 
+
+new s "R" <  new s "V" <  new s "S" <  new s "C" <  new dx 0.600000 *  ,  new dx 0.000000 *  ,  ref 5  >  ,  new s "C" <  ref 5  ,  ref 5  ,  ref 5  >  ,  ref 6  ,  ref 6  >  ,  new s "S" <  ref 6  ,  ref 6  ,  ref 6  ,  new s "C" <  new dx 0.066000 *  ,  ref 5  ,  ref 5  >  >  >  ,  new s "V" <  new s "S" <  new s "C" <  new dx 0.300000 *  ,  ref 5  ,  ref 5  >  ,  new s "C" <  new dx 0.054000 *  ,  new dx 0.018000 *  ,  ref 5  >  ,  new s "C" <  new dx 0.036000 *  ,  ref 18  ,  ref 5  >  ,  new s "C" <  ref 5  ,  ref 5  ,  new dx 0.140000 *  >  >  ,  new s "S" <  new s "C" <  ref 5  ,  ref 5  ,  new dx 0.006600 *  >  ,  new s "C" <  ref 5  ,  new dx 0.001980 *  ,  new dx 0.005940 *  >  ,  new s "C" <  ref 5  ,  ref 23  ,  ref 23  >  ,  new s "C" <  new dx 0.037400 *  ,  ref 5  ,  ref 5  >  >  >  ,  new s "V" <  new s "S" <  new s "C" <  new dx 0.150000 *  ,  ref 5  ,  ref 5  >  ,  new s "C" <  new dx 0.040500 *  ,  new dx 0.013500 *  ,  ref 5  >  ,  new s "C" <  new dx 0.027000 *  ,  ref 38  ,  ref 5  >  ,  new s "C" <  ref 5  ,  ref 5  ,  new dx 0.180000 *  >  >  ,  new s "S" <  new s "C" <  ref 5  ,  ref 5  ,  new dx 0.016500 *  >  ,  new s "C" <  ref 5  ,  new dx 0.001485 *  ,  new dx 0.004455 *  >  ,  new s "C" <  ref 5  ,  new dx 0.002970 *  ,  ref 48  >  ,  new s "C" <  new dx 0.019800 *  ,  ref 5  ,  ref 5  >  >  >  > 
+
+------marginalization-----------------
+
+Marginal Lower bounds
+
+new s "R" <  new s "V" <  new s "S" <  new s "C" <  new dx 0.356000 *  ,  new dx 0.000000 *  ,  ref 5  >  ,  ref 3  ,  ref 3  ,  ref 3  >  ,  new s "S" <  new s "C" <  ref 5  ,  ref 5  ,  ref 5  >  ,  ref 7  ,  ref 7  ,  ref 7  >  >  ,  new s "V" <  new s "S" <  new s "C" <  new dx 0.097900 *  ,  ref 5  ,  new dx 0.026700 *  >  ,  ref 10  ,  ref 10  ,  ref 10  >  ,  ref 6  >  ,  new s "V" <  new s "S" <  new s "C" <  ref 12  ,  ref 5  ,  new dx 0.035600 *  >  ,  ref 15  ,  ref 15  ,  ref 15  >  ,  ref 6  >  > 
+
+Marginal Upper bounds
+
+new s "R" <  new s "V" <  new s "S" <  new s "C" <  new dx 0.600000 *  ,  new dx 0.000000 *  ,  ref 5  >  ,  ref 3  ,  ref 3  ,  ref 3  >  ,  new s "S" <  new s "C" <  new dx 0.066000 *  ,  ref 5  ,  ref 5  >  ,  ref 7  ,  ref 7  ,  ref 7  >  >  ,  new s "V" <  new s "S" <  new s "C" <  new dx 0.390000 *  ,  new dx 0.054000 *  ,  new dx 0.140000 *  >  ,  ref 11  ,  ref 11  ,  ref 11  >  ,  new s "S" <  new s "C" <  new dx 0.037400 *  ,  new dx 0.008580 *  ,  new dx 0.019140 *  >  ,  ref 16  ,  ref 16  ,  ref 16  >  >  ,  new s "V" <  new s "S" <  new s "C" <  new dx 0.217500 *  ,  new dx 0.040500 *  ,  new dx 0.180000 *  >  ,  ref 22  ,  ref 22  ,  ref 22  >  ,  new s "S" <  new s "C" <  new dx 0.019800 *  ,  new dx 0.004455 *  ,  new dx 0.023925 *  >  ,  ref 27  ,  ref 27  ,  ref 27  >  >  > 
+
+------conditioning-----------------
+
+Conditioned Lower bounds
+
+new s "R" <  new s "V" <  new s "S" <  new s "C" <  new dx 0.843602 *  ,  new dx NaN *  ,  ref 5  >  ,  ref 3  ,  ref 3  ,  ref 3  >  ,  new s "S" <  new s "C" <  new dx 0.000000 *  ,  ref 5  ,  ref 5  >  ,  ref 7  ,  ref 7  ,  ref 7  >  >  ,  new s "V" <  new s "S" <  new s "C" <  new dx 0.723577 *  ,  ref 8  ,  new dx 0.582461 *  >  ,  ref 11  ,  ref 11  ,  ref 11  >  ,  new s "S" <  new s "C" <  ref 8  ,  ref 8  ,  ref 8  >  ,  ref 15  ,  ref 15  ,  ref 15  >  >  ,  new s "V" <  new s "S" <  new s "C" <  new dx 0.574194 *  ,  ref 8  ,  new dx 0.598068 *  >  ,  ref 18  ,  ref 18  ,  ref 18  >  ,  ref 14  >  > 
+
+Conditioned Upper bounds
+
+new s "R" <  new s "V" <  new s "S" <  new s "C" <  new dx 1.000000 *  ,  new dx NaN *  ,  ref 5  >  ,  ref 3  ,  ref 3  ,  ref 3  >  ,  new s "S" <  new s "C" <  new dx 0.156398 *  ,  ref 5  ,  ref 5  >  ,  ref 7  ,  ref 7  ,  ref 7  >  >  ,  new s "V" <  new s "S" <  new s "C" <  ref 4  ,  ref 4  ,  ref 4  >  ,  ref 11  ,  ref 11  ,  ref 11  >  ,  new s "S" <  new s "C" <  new dx 0.276423 *  ,  ref 4  ,  new dx 0.417539 *  >  ,  ref 13  ,  ref 13  ,  ref 13  >  >  ,  new s "V" <  new s "S" <  new s "C" <  new dx 1.000000 *  ,  ref 4  ,  ref 19  >  ,  ref 18  ,  ref 18  ,  ref 18  >  ,  new s "S" <  new s "C" <  new dx 0.425806 *  ,  ref 4  ,  new dx 0.401932 *  >  ,  ref 21  ,  ref 21  ,  ref 21  >  >  > 
+
+-----------------------
+
+new s "R" <  new s "V" <  new s "S" <  new s "C" <  new dx 0.574194 *  >  ,  ref 3  ,  ref 3  ,  ref 3  >  ,  new s "S" <  new s "C" <  new dx 0.000000 *  >  ,  ref 6  ,  ref 6  ,  ref 6  >  >  > 
+
+new s "R" <  new s "V" <  new s "S" <  new s "C" <  new dx 1.000000 *  >  ,  ref 3  ,  ref 3  ,  ref 3  >  ,  new s "S" <  new s "C" <  new dx 0.425806 *  >  ,  ref 6  ,  ref 6  ,  ref 6  >  >  > 
+

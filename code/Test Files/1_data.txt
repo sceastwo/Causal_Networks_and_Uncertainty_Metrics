@@ -1,0 +1,53 @@
+4
+
+"Pr(R)"     
+new s "R" < new s "V" < new s "S" < new s "C" < new d 0.5 * , addr 0 @ , addr 0 @ > , addr 0 @ , addr 0 @ , addr 0 @ > , addr 0 @ > , 
+            new s "V" < new s "S" < new s "C" < new d 0.3 * , addr 0 @ , addr 0 @ > , addr 0 @ , addr 0 @ , addr 0 @ > , addr 0 @ > ,
+            new s "V" < new s "S" < new s "C" < new d 0.2 * , addr 0 @ , addr 0 @ > , addr 0 @ , addr 0 @ , addr 0 @ > , addr 0 @ > >
+
+"Pr(V)"     
+new s "R" < new s "V" < new s "S" < new s "C" < new d 0.99 * , addr 0 @ , addr 0 @ > , addr 0 @ , addr 0 @ , addr 0 @ > , 
+                        new s "S" < new s "C" < new d 0.01 * , addr 0 @ , addr 0 @ > , addr 0 @ , addr 0 @ , addr 0 @ > > , 
+            addr 0 @ , addr 0 @ > 
+
+"Pr(S|R,V)" 
+new s "R" < new s "V" < new s "S" < new s "C" < new d 1.00 * , addr 0 @ , addr 0 @ > , 
+                                    new s "C" < new d 0.00 * , addr 0 @ , addr 0 @ > , 
+                                    new s "C" < new d 0.00 * , addr 0 @ , addr 0 @ > , 
+                                    new s "C" < new d 0.00 * , addr 0 @ , addr 0 @ > > , 
+                        new s "S" < new s "C" < new d 0.00 * , addr 0 @ , addr 0 @ > , 
+                                    new s "C" < new d 0.00 * , addr 0 @ , addr 0 @ > , 
+                                    new s "C" < new d 0.00 * , addr 0 @ , addr 0 @ > , 
+                                    new s "C" < new d 1.00 * , addr 0 @ , addr 0 @ > > > ,   
+            new s "V" < new s "S" < new s "C" < new d 0.65 * , addr 0 @ , addr 0 @ > , 
+                                    new s "C" < new d 0.05 * , addr 0 @ , addr 0 @ > , 
+                                    new s "C" < new d 0.05 * , addr 0 @ , addr 0 @ > , 
+                                    new s "C" < new d 0.25 * , addr 0 @ , addr 0 @ > > , 
+                        new s "S" < new s "C" < new d 0.05 * , addr 0 @ , addr 0 @ > , 
+                                    new s "C" < new d 0.05 * , addr 0 @ , addr 0 @ > , 
+                                    new s "C" < new d 0.15 * , addr 0 @ , addr 0 @ > , 
+                                    new s "C" < new d 0.75 * , addr 0 @ , addr 0 @ > > > , 
+            new s "V" < new s "S" < new s "C" < new d 0.40 * , addr 0 @ , addr 0 @ > , 
+                                    new s "C" < new d 0.05 * , addr 0 @ , addr 0 @ > , 
+                                    new s "C" < new d 0.05 * , addr 0 @ , addr 0 @ > , 
+                                    new s "C" < new d 0.50 * , addr 0 @ , addr 0 @ > > , 
+                        new s "S" < new s "C" < new d 0.40 * , addr 0 @ , addr 0 @ > , 
+                                    new s "C" < new d 0.05 * , addr 0 @ , addr 0 @ > , 
+                                    new s "C" < new d 0.05 * , addr 0 @ , addr 0 @ > , 
+                                    new s "C" < new d 0.50 * , addr 0 @ , addr 0 @ > > > >     
+
+"Pr(C|V,S)" 
+new s "R" < new s "V" < new s "S" < new s "C" < new d 1.00 * , new d 0.00 * , new d 0.00 * > , 
+                                    new s "C" < new d 0.80 * , new d 0.20 * , new d 0.00 * > , 
+                                    new s "C" < new d 0.50 * , new d 0.50 * , new d 0.00 * > , 
+                                    new s "C" < new d 0.00 * , new d 0.00 * , new d 1.00 * > > , 
+                        new s "S" < new s "C" < new d 0.00 * , new d 0.00 * , new d 1.00 * > ,
+                                    new s "C" < new d 0.00 * , new d 0.20 * , new d 0.80 * > , 
+                                    new s "C" < new d 0.00 * , new d 0.50 * , new d 0.50 * > , 
+                                    new s "C" < new d 1.00 * , new d 0.00 * , new d 0.00 * > > > , 
+            addr 0 @ , 
+            addr 0 @ >       
+
+
+
+

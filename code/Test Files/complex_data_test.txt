@@ -1,0 +1,23 @@
+4 
+
+pair < i 5 , i 7 > 
+
+list 5 < s ttt , i -123 , dx NaN , d 5.678 , fuzzy (-1,0,1) > 
+
+list 7 < s ttt , i -123 , dx NaN , d 5.678 , fuzzy (-1,0,1) , fuzzy (-1,0,1) , d 5.6780 >
+
+list 2 < list 2 < 0 , i 1 > , list 2 < i 1 , 0 > >
+
+set { box list < dx neg_inf , i 56 , set { box s t_t , i 57 } > , box list < dx neg_inf , i 56 , set { i 057 , box s t_t } > } 
+
+map 0 { < d 5.6 , s t_y > , < i -3 , dx 5.67 > , < 0 , s xx > , < 0 , s yy > } 
+
+list 0
+
+set 0
+
+map 0 0 
+
+map i -7 { < i 6 , s "to bum" > }  
+
+

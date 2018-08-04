@@ -1,0 +1,9 @@
+4
+
+< i 5 , i 6 >
+
+< s poop , pair < i 4 , i 5 > > 
+
+< 0 , list 3 < i 4 , i 5 , i 6 > > 
+
+< list 4 < pair < i 23 , d 5.67 > , s poop , c u , 0 > , list 3 < i 4 , i 5 , i 6 > > 

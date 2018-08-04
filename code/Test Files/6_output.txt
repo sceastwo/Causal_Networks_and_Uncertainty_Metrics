@@ -1,0 +1,4 @@
+s "A" <  new s "B" <  new s "C" <  new s "D" <  new bool 0 *  ,  new bool 1 *  >  ,  new s "D" <  ref 5  ,  ref 4  >  >  ,  new s "C" <  ref 6  ,  ref 3  >  >  ,  new s "B" <  ref 7  ,  ref 2  >  > 
+
+s "A" <  new s "B" <  new s "C" <  new s "D" <  new bool 0 *  ,  new bool 1 *  >  ,  new s "D" <  new bool 1 *  ,  new bool 0 *  >  >  ,  new s "C" <  new s "D" <  new bool 1 *  ,  new bool 0 *  >  ,  new s "D" <  new bool 0 *  ,  new bool 1 *  >  >  >  ,  new s "B" <  ref 9  ,  ref 2  >  > 
+

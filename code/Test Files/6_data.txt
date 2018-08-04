@@ -1,0 +1,56 @@
+4
+
+sub_graph_1 
+i 5 < new s "start" * , 
+table 2 
+normal s "X" 3  
+normal s "Y" 2 
+0 
+d 1.0 d 2.0 d 3.0 d 4.0 d 5.0 d 6.0 ,
+new s "end" * >
+
+sub_graph_2 
+i 5 < new s "start" * , 
+table 3 
+normal   s "X" 3  
+inactive s "Y" 4  
+normal   s "Z" 2  
+0
+d 1.0 d 2.0 d 3.0 d 4.0 d 5.0 d 6.0 ,
+new s "end" * >  
+
+"Pr(T)"
+s "W" < 
+    table 5 
+    normal   s "T" 3  
+    inactive s "S" 3  
+    inactive s "P" 5  
+    inactive s "C" 2  
+    inactive s "M" 2 
+    0 
+    d 0.33 d 0.33 d 0.34 , 
+    addr 0 @ > 
+
+"XOR" 
+s "A" < 
+    new s "B" < 
+        new s "C" < 
+            new s "D" < 
+                new bool 0 * , 
+                new bool 1 * > , 
+            new s "D" < 
+                addr ^ 0 1 @ , 
+                addr ^ 0 0 @ > > , 
+        new s "C" < 
+            addr ^ 0 1 @ , 
+            addr ^ 0 0 @ > > , 
+    new s "B" < 
+        addr ^ 0 1 @ , 
+        addr ^ 0 0 @ > > 
+
+
+
+
+
+
+

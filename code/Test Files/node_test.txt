@@ -1,0 +1,17 @@
+8
+
+i 0 < new i 1 * , new i 2 < new i 3 < new i 4 < ref 1 , ref 2 > > , new i 5 < ref 3 , ref 0 > > > 
+
+i 0 < new i 0 < ref 1 , new i 0 < new i 0 < new i 1 < ref 4 , ref 4 > , ref 2 > , ref 0 > > , ref 0 >
+
+i 0 < ref 0 , new i 1 < new i 2 < ref 0 , ref 1 > , new i 3 < ref 2 , ref 3 > > >
+
+i 0 < new i 1 < new i 2 < ref 0 > > >
+
+i 0 < new i 1 < new i 2 < new i 3 < ref 0 > > > >
+
+i 0 < new i 1 < new i 0 < new i 1 < ref 0 > > > > 
+
+i 0 < ref 0 , new i 1 < new i 2 < new i 0 < ref 3 , new i 1 < new i 2 < ref 0 , ref 1 > , new i 3 < ref 2 , new i 3 < ref 5 , ref 6 > > > > , ref 4 > , ref 7 > > 
+
+i 0 < new i 1 * , new i 10 * > 

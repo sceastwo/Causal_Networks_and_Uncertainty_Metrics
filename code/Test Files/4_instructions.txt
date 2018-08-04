@@ -1,0 +1,73 @@
+
+condition "DS(R)_r3"   0 "DS(R)"    2 2 
+condition "DS(R)_r3c1" 0 "DS(R)_r3" 5 0
+
+condition "DS(V)_r3"   0 "DS(V)"    2 2 
+condition "DS(V)_r3c1" 0 "DS(V)_r3" 5 0
+
+condition "DS(S|r3,v1)_r3"   0 "DS(S|r3,v1)"    2 2 
+condition "DS(S|r3,v1)_r3c1" 0 "DS(S|r3,v1)_r3" 5 0
+condition "DS(S|r3,v2)_r3"   0 "DS(S|r3,v2)"    2 2 
+condition "DS(S|r3,v2)_r3c1" 0 "DS(S|r3,v2)_r3" 5 0
+
+condition "DS(C|v1,s1)_r3"   0 "DS(C|v1,s1)"    2 2 
+condition "DS(C|v1,s1)_r3c1" 0 "DS(C|v1,s1)_r3" 5 0
+condition "DS(C|v1,s2)_r3"   0 "DS(C|v1,s2)"    2 2 
+condition "DS(C|v1,s2)_r3c1" 0 "DS(C|v1,s2)_r3" 5 0
+condition "DS(C|v1,s3)_r3"   0 "DS(C|v1,s3)"    2 2 
+condition "DS(C|v1,s3)_r3c1" 0 "DS(C|v1,s3)_r3" 5 0
+condition "DS(C|v1,s4)_r3"   0 "DS(C|v1,s4)"    2 2 
+condition "DS(C|v1,s4)_r3c1" 0 "DS(C|v1,s4)_r3" 5 0
+condition "DS(C|v2,s1)_r3"   0 "DS(C|v2,s1)"    2 2 
+condition "DS(C|v2,s1)_r3c1" 0 "DS(C|v2,s1)_r3" 5 0
+condition "DS(C|v2,s2)_r3"   0 "DS(C|v2,s2)"    2 2 
+condition "DS(C|v2,s2)_r3c1" 0 "DS(C|v2,s2)_r3" 5 0
+condition "DS(C|v2,s3)_r3"   0 "DS(C|v2,s3)"    2 2 
+condition "DS(C|v2,s3)_r3c1" 0 "DS(C|v2,s3)_r3" 5 0
+condition "DS(C|v2,s4)_r3"   0 "DS(C|v2,s4)"    2 2 
+condition "DS(C|v2,s4)_r3c1" 0 "DS(C|v2,s4)_r3" 5 0
+
+print_string "done conditioning:" 
+
+DS_binary_operator "DS_f(V|r3,c1)" * 1 "DS(R)_r3c1"    "DS(V)_r3c1"
+DS_collapse "DS_f(V|r3,c1)" "DS_f(V|r3,c1)" 
+print_string "check point 1:"
+
+DS_binary_operator "DS_f(V|r3,c1)" * 1 "DS_f(V|r3,c1)" "DS(S|r3,v1)_r3c1"
+DS_collapse "DS_f(V|r3,c1)" "DS_f(V|r3,c1)"
+DS_binary_operator "DS_f(V|r3,c1)" * 1 "DS_f(V|r3,c1)" "DS(S|r3,v2)_r3c1"
+DS_collapse "DS_f(V|r3,c1)" "DS_f(V|r3,c1)"
+print_string "check point 2:"
+
+DS_binary_operator "DS_f(V|r3,c1)" * 1 "DS_f(V|r3,c1)" "DS(C|v1,s1)_r3c1"
+DS_collapse "DS_f(V|r3,c1)" "DS_f(V|r3,c1)"
+DS_binary_operator "DS_f(V|r3,c1)" * 1 "DS_f(V|r3,c1)" "DS(C|v1,s2)_r3c1"
+DS_collapse "DS_f(V|r3,c1)" "DS_f(V|r3,c1)"
+DS_binary_operator "DS_f(V|r3,c1)" * 1 "DS_f(V|r3,c1)" "DS(C|v1,s3)_r3c1"
+DS_collapse "DS_f(V|r3,c1)" "DS_f(V|r3,c1)"
+DS_binary_operator "DS_f(V|r3,c1)" * 1 "DS_f(V|r3,c1)" "DS(C|v1,s4)_r3c1"
+DS_collapse "DS_f(V|r3,c1)" "DS_f(V|r3,c1)"
+print_string "check point 3:"
+DS_binary_operator "DS_f(V|r3,c1)" * 1 "DS_f(V|r3,c1)" "DS(C|v2,s1)_r3c1"
+DS_collapse "DS_f(V|r3,c1)" "DS_f(V|r3,c1)"
+DS_binary_operator "DS_f(V|r3,c1)" * 1 "DS_f(V|r3,c1)" "DS(C|v2,s2)_r3c1"
+DS_collapse "DS_f(V|r3,c1)" "DS_f(V|r3,c1)"
+DS_binary_operator "DS_f(V|r3,c1)" * 1 "DS_f(V|r3,c1)" "DS(C|v2,s3)_r3c1"
+DS_collapse "DS_f(V|r3,c1)" "DS_f(V|r3,c1)"
+DS_binary_operator "DS_f(V|r3,c1)" * 1 "DS_f(V|r3,c1)" "DS(C|v2,s4)_r3c1"
+DS_collapse "DS_f(V|r3,c1)" "DS_f(V|r3,c1)"
+
+print_string "done product:" 
+
+marginalize "DS_f(V|r3,c1)" 0 "DS_f(V|r3,c1)" 4 
+DS_collapse "DS_f(V|r3,c1)" "DS_f(V|r3,c1)"
+expand "DS_f(V|r3,c1)" 1 "DS_f(V|r3,c1)" 6
+
+print_subgraph "DS_f(V|r3,c1)"
+
+
+
+
+
+
+

@@ -1,0 +1,56 @@
+4
+
+"example_1a"
+table 3
+normal   s "x0" 3
+inactive s "x1" 2 
+normal   s "x2" 2 
+0  
+d 0.4  d 0.7  d 0.2  d 0.1  d 0.9  d 0.8  
+
+"example_1b" 
+new s "x0" < 
+    new s "x1" < new s "x2" < 
+        new d 0.4 * , 
+        new d 0.7 * > , 
+    addr 0 @ > , 
+    new s "x1" < new s "x2" < 
+        new d 0.2 * , 
+        new d 0.1 * > , 
+    addr 0 @ > , 
+    new s "x1" < new s "x2" < 
+        new d 0.9 * , 
+        new d 0.8 * > , 
+    addr 0 @ > >  
+
+
+"example_2a"
+table 3
+normal   s "x0" 3
+specific s "x1" 2 1 
+normal   s "x2" 2 
+bool 1   
+d 0.4  d 0.7  d 0.2  d 0.1  d 0.9  d 0.8  
+
+"example_2b"
+new s "x0" < 
+    new s "x1" < 
+        new s "x2" < 
+            new bool 1 * , 
+            addr 0 @ > , 
+        new s "x2" < 
+            new d 0.4 * , 
+            new d 0.7 * > > , 
+    new s "x1" < 
+        addr ! 0 0 @ , 
+        new s "x2" < 
+            new d 0.2 * , 
+            new d 0.1 * > > , 
+    new s "x1" < 
+        addr ! 0 0 @ , 
+        new s "x2" < 
+            new d 0.9 * , 
+            new d 0.8 * > > >  
+
+
+

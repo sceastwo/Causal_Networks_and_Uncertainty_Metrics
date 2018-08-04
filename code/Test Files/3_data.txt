@@ -1,0 +1,137 @@
+8
+
+
+"PrL(R)"     
+new s "R" < new s "V" < new s "S" < new s "C" < new dx 0.4 * , ref  4 , ref  4 > , ref  3 , ref  3 , ref  3 > , ref  2 > , 
+            new s "V" < new s "S" < new s "C" < new dx 0.2 * , ref  8 , ref  8 > , ref  7 , ref  7 , ref  7 > , ref  6 > ,
+            new s "V" < new s "S" < new s "C" < new dx 0.1 * , ref 12 , ref 12 > , ref 11 , ref 11 , ref 11 > , ref 10 > >
+
+"PrU(R)"    
+new s "R" < new s "V" < new s "S" < new s "C" < new dx 0.6 * , ref  4 , ref  4 > , ref  3 , ref  3 , ref  3 > , ref  2 > , 
+            new s "V" < new s "S" < new s "C" < new dx 0.4 * , ref  8 , ref  8 > , ref  7 , ref  7 , ref  7 > , ref  6 > ,
+            new s "V" < new s "S" < new s "C" < new dx 0.3 * , ref 12 , ref 12 > , ref 11 , ref 11 , ref 11 > , ref 10 > >
+
+
+"PrL(V)" 
+new s "R" < new s "V" < new s "S" < new s "C" < new dx 0.89 * , ref 4 , ref 4 > , ref 3 , ref 3 , ref 3 > , 
+                        new s "S" < new s "C" < new dx 0.00 * , ref 7 , ref 7 > , ref 6 , ref 6 , ref 6 > > , 
+            ref 1 , ref 1 > 
+
+"PrU(V)" 
+new s "R" < new s "V" < new s "S" < new s "C" < new dx 1.00 * , ref 4 , ref 4 > , ref 3 , ref 3 , ref 3 > , 
+                        new s "S" < new s "C" < new dx 0.11 * , ref 7 , ref 7 > , ref 6 , ref 6 , ref 6 > > , 
+            ref 1 , ref 1 > 
+
+
+"PrL(S|R,V)" 
+new s "R" < new s "V" < new s "S" < new s "C" < new dx 1.00 * , ref  4 , ref  4 > , 
+                                    new s "C" < new dx 0.00 * , ref  6 , ref  6 > , 
+                                    new s "C" < new dx 0.00 * , ref  8 , ref  8 > , 
+                                    new s "C" < new dx 0.00 * , ref 10 , ref 10 > > , 
+                        new s "S" < new s "C" < new dx 0.00 * , ref 13 , ref 13 > , 
+                                    new s "C" < new dx 0.00 * , ref 15 , ref 15 > , 
+                                    new s "C" < new dx 0.00 * , ref 17 , ref 17 > , 
+                                    new s "C" < new dx 1.00 * , ref 19 , ref 19 > > > ,   
+            new s "V" < new s "S" < new s "C" < new dx 0.55 * , ref 23 , ref 23 > , 
+                                    new s "C" < new dx 0.00 * , ref 25 , ref 25 > , 
+                                    new s "C" < new dx 0.00 * , ref 27 , ref 27 > , 
+                                    new s "C" < new dx 0.15 * , ref 29 , ref 29 > > , 
+                        new s "S" < new s "C" < new dx 0.00 * , ref 32 , ref 32 > , 
+                                    new s "C" < new dx 0.00 * , ref 34 , ref 34 > , 
+                                    new s "C" < new dx 0.05 * , ref 36 , ref 36 > , 
+                                    new s "C" < new dx 0.65 * , ref 38 , ref 38 > > > , 
+            new s "V" < new s "S" < new s "C" < new dx 0.30 * , ref 42 , ref 42 > , 
+                                    new s "C" < new dx 0.00 * , ref 44 , ref 44 > , 
+                                    new s "C" < new dx 0.00 * , ref 46 , ref 46 > , 
+                                    new s "C" < new dx 0.40 * , ref 48 , ref 48 > > , 
+                        new s "S" < new s "C" < new dx 0.30 * , ref 51 , ref 51 > , 
+                                    new s "C" < new dx 0.00 * , ref 53 , ref 53 > , 
+                                    new s "C" < new dx 0.00 * , ref 55 , ref 55 > , 
+                                    new s "C" < new dx 0.40 * , ref 57 , ref 57 > > > >  
+
+"PrU(S|R,V)" 
+new s "R" < new s "V" < new s "S" < new s "C" < new dx 1.00 * , ref  4 , ref  4 > , 
+                                    new s "C" < new dx 0.00 * , ref  6 , ref  6 > , 
+                                    new s "C" < new dx 0.00 * , ref  8 , ref  8 > , 
+                                    new s "C" < new dx 0.00 * , ref 10 , ref 10 > > , 
+                        new s "S" < new s "C" < new dx 0.00 * , ref 13 , ref 13 > , 
+                                    new s "C" < new dx 0.00 * , ref 15 , ref 15 > , 
+                                    new s "C" < new dx 0.00 * , ref 17 , ref 17 > , 
+                                    new s "C" < new dx 1.00 * , ref 19 , ref 19 > > > ,   
+            new s "V" < new s "S" < new s "C" < new dx 0.75 * , ref 23 , ref 23 > , 
+                                    new s "C" < new dx 0.15 * , ref 25 , ref 25 > , 
+                                    new s "C" < new dx 0.15 * , ref 27 , ref 27 > , 
+                                    new s "C" < new dx 0.35 * , ref 29 , ref 29 > > , 
+                        new s "S" < new s "C" < new dx 0.15 * , ref 32 , ref 32 > , 
+                                    new s "C" < new dx 0.15 * , ref 34 , ref 34 > , 
+                                    new s "C" < new dx 0.25 * , ref 36 , ref 36 > , 
+                                    new s "C" < new dx 0.85 * , ref 38 , ref 38 > > > , 
+            new s "V" < new s "S" < new s "C" < new dx 0.50 * , ref 42 , ref 42 > , 
+                                    new s "C" < new dx 0.15 * , ref 44 , ref 44 > , 
+                                    new s "C" < new dx 0.15 * , ref 46 , ref 46 > , 
+                                    new s "C" < new dx 0.60 * , ref 48 , ref 48 > > , 
+                        new s "S" < new s "C" < new dx 0.50 * , ref 51 , ref 51 > , 
+                                    new s "C" < new dx 0.15 * , ref 53 , ref 53 > , 
+                                    new s "C" < new dx 0.15 * , ref 55 , ref 55 > , 
+                                    new s "C" < new dx 0.60 * , ref 57 , ref 57 > > > >    
+
+
+"PrL(C|V,S)" 
+new s "R" < new s "V" < new s "S" < new s "C" < new dx 1.00 * , 
+                                                new dx 0.00 * , 
+                                                new dx 0.00 * > , 
+                                    new s "C" < new dx 0.70 * , 
+                                                new dx 0.10 * , 
+                                                new dx 0.00 * > , 
+                                    new s "C" < new dx 0.40 * , 
+                                                new dx 0.40 * , 
+                                                new dx 0.00 * > , 
+                                    new s "C" < new dx 0.00 * , 
+                                                new dx 0.00 * , 
+                                                new dx 1.00 * > > , 
+                        new s "S" < new s "C" < new dx 0.00 * , 
+                                                new dx 0.00 * , 
+                                                new dx 1.00 * > ,
+                                    new s "C" < new dx 0.00 * , 
+                                                new dx 0.10 * , 
+                                                new dx 0.70 * > , 
+                                    new s "C" < new dx 0.00 * , 
+                                                new dx 0.40 * , 
+                                                new dx 0.40 * > , 
+                                    new s "C" < new dx 1.00 * , 
+                                                new dx 0.00 * , 
+                                                new dx 0.00 * > > > , 
+            ref 1 , 
+            ref 1 >  
+
+"PrU(C|V,S)" 
+new s "R" < new s "V" < new s "S" < new s "C" < new dx 1.00 * , 
+                                                new dx 0.00 * , 
+                                                new dx 0.00 * > , 
+                                    new s "C" < new dx 0.90 * , 
+                                                new dx 0.30 * , 
+                                                new dx 0.00 * > , 
+                                    new s "C" < new dx 0.60 * , 
+                                                new dx 0.60 * , 
+                                                new dx 0.00 * > , 
+                                    new s "C" < new dx 0.00 * , 
+                                                new dx 0.00 * , 
+                                                new dx 1.00 * > > , 
+                        new s "S" < new s "C" < new dx 0.00 * , 
+                                                new dx 0.00 * , 
+                                                new dx 1.00 * > ,
+                                    new s "C" < new dx 0.00 * , 
+                                                new dx 0.30 * , 
+                                                new dx 0.90 * > , 
+                                    new s "C" < new dx 0.00 * , 
+                                                new dx 0.60 * , 
+                                                new dx 0.60 * > , 
+                                    new s "C" < new dx 1.00 * , 
+                                                new dx 0.00 * , 
+                                                new dx 0.00 * > > > , 
+            ref 1 , 
+            ref 1 >       
+
+
+
+

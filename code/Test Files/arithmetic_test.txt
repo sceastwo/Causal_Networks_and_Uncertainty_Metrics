@@ -1,0 +1,13 @@
+8
+0
+bool 1 
+d 3.5
+i -6
+c a
+uint16 25
+pair < d 1.0 , d 2.0 >
+list 2 < i 5 , pair < bool 0 , i -5 > >
+
+
+
+

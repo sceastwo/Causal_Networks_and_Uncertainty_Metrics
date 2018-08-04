@@ -1,0 +1,7 @@
+6
+0 < > 
+1 < 0 >
+1 < fuzzy (-5.0,0.0,3.0) >
+5 < list 3 < d 3.59 , i 67 , 0 > , i 5 , c u , s something , i 5 >
+2 < list 3 < d 3.5 , fuzzy (-5,6,10) , 0 > , s xxx >
+6 < s ass , pair < i -1 , c a > , d 3.5 , bool 1 , 0 , pair < i -1 , c a > >

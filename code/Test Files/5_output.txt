@@ -1,0 +1,12 @@
+done conditioning:
+
+check point 1:
+
+check point 2:
+
+check point 3:
+
+done product:
+
+s "DS" <  new d 0.877933 <  new s "R" <  new s "V" <  new s "S" <  new s "C" <  new bool 1 *  >  >  ,  new s "S" <  new s "C" <  new bool 0 *  >  >  >  >  >  ,  new d 0.073240 <  new s "R" <  new s "V" <  new s "S" <  new s "C" <  new bool 1 *  >  >  ,  new s "S" <  new s "C" <  new bool 1 *  >  >  >  >  >  ,  new d 0.048827 <  new s "R" <  new s "V" <  new s "S" <  new s "C" <  new bool 0 *  >  >  ,  new s "S" <  new s "C" <  new bool 1 *  >  >  >  >  >  > 
+

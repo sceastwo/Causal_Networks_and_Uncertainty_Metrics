@@ -1,0 +1,24 @@
+
+binary_operator "Pr(R,V)" * 1 "Pr(R)" "Pr(V)"
+binary_operator "Pr(R,V,S)" * 1 "Pr(R,V)" "Pr(S|R,V)"
+binary_operator "Pr(R,V,S,C)" * 1 "Pr(R,V,S)" "Pr(C|V,S)"
+condense "Pr(R,V,S,C)" "Pr(R,V,S,C)"
+
+print_subgraph "Pr(R,V,S,C)" 
+
+condition "Pr(r_3,V,S,C)" 0 "Pr(R,V,S,C)" 0 2
+condition "Pr(r_3,V,S,c_1)" 0 "Pr(r_3,V,S,C)" 3 0
+
+marginalize "Pr(r_3,V,c_1)" 0 "Pr(r_3,V,S,c_1)" 2 
+marginalize "Pr(r_3,c_1)" 1 "Pr(r_3,V,c_1)" 1 
+
+binary_operator "Pr(V|r_3,c_1)" / 1 "Pr(r_3,V,c_1)" "Pr(r_3,c_1)" 
+condense "Pr(V|r_3,c_1)" "Pr(V|r_3,c_1)"
+
+print_subgraph "Pr(V|r_3,c_1)"
+
+
+
+
+
+ 

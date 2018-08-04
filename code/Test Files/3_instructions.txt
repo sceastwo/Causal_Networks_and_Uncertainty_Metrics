@@ -1,0 +1,107 @@
+
+binary_operator "PrL(R,V)" * 1 "PrL(R)" "PrL(V)" 
+binary_operator "PrU(R,V)" * 1 "PrU(R)" "PrU(V)" 
+
+binary_operator "PrL(R,V,S)" * 1 "PrL(R,V)" "PrL(S|R,V)"
+binary_operator "PrU(R,V,S)" * 1 "PrU(R,V)" "PrU(S|R,V)"
+
+binary_operator "PrL(R,V,S,C)" * 1 "PrL(R,V,S)" "PrL(C|V,S)"
+binary_operator "PrU(R,V,S,C)" * 1 "PrU(R,V,S)" "PrU(C|V,S)"
+
+condense "PrL(R,V,S,C)" "PrL(R,V,S,C)"
+condense "PrU(R,V,S,C)" "PrU(R,V,S,C)"
+
+print_subgraph "PrL(R,V,S,C)"
+print_subgraph "PrU(R,V,S,C)"
+
+print_string "------marginalization-----------------"
+
+assign_new_subgraph "1" new s "R" < new s "V" < new s "S" < new s "C" < new d 1.00 * , ref 4 , ref 4 > , ref 3 , ref 3 , ref 3 > , ref 2 > , ref 1 , ref 1 >
+
+marginalize "PrL_sum_S(R,V,C)" 1 "PrL(R,V,S,C)" 2 
+marginalize "PrU_sum_S(R,V,C)" 1 "PrU(R,V,S,C)" 2 
+
+marginalize "PrL_sum_R,S(V,C)" 1 "PrL_sum_S(R,V,C)" 0
+marginalize "PrU_sum_R,S(V,C)" 1 "PrU_sum_S(R,V,C)" 0
+
+marginalize "PrL_sum_R,V,S(C)" 1 "PrL_sum_R,S(V,C)" 1
+marginalize "PrU_sum_R,V,S(C)" 1 "PrU_sum_R,S(V,C)" 1
+
+marginalize "PrL_sum_R,V,S,C" 1 "PrL_sum_R,V,S(C)" 3
+marginalize "PrU_sum_R,V,S,C" 1 "PrU_sum_R,V,S(C)" 3
+
+binary_operator "PrL_sum_-R,-V,S,-C" - 1 "PrL_sum_R,V,S,C" "PrL_sum_S(R,V,C)"
+binary_operator "PrU_sum_-R,-V,S,-C" - 1 "PrU_sum_R,V,S,C" "PrU_sum_S(R,V,C)"
+
+binary_operator "1-PrL_sum_-R,-V,S,-C" - 1 "1" "PrL_sum_-R,-V,S,-C"
+binary_operator "1-PrU_sum_-R,-V,S,-C" - 1 "1" "PrU_sum_-R,-V,S,-C"
+
+binary_operator "PrL_m(R,V,C)" max 1 "PrL_sum_S(R,V,C)" "1-PrU_sum_-R,-V,S,-C" 
+binary_operator "PrU_m(R,V,C)" min 1 "PrU_sum_S(R,V,C)" "1-PrL_sum_-R,-V,S,-C"
+
+condense "PrL_m(R,V,C)" "PrL_m(R,V,C)"
+condense "PrU_m(R,V,C)" "PrU_m(R,V,C)"
+
+print_string "Marginal Lower bounds"
+
+print_subgraph "PrL_m(R,V,C)" 
+
+print_string "Marginal Upper bounds"
+
+print_subgraph "PrU_m(R,V,C)" 
+
+print_string "------conditioning-----------------"
+
+marginalize "PrL_m_sum_V(R,C)" 1 "PrL_m(R,V,C)" 1 
+marginalize "PrU_m_sum_V(R,C)" 1 "PrU_m(R,V,C)" 1 
+
+marginalize "PrL_m_sum_R,V(C)" 1 "PrL_m_sum_V(R,C)" 0 
+marginalize "PrU_m_sum_R,V(C)" 1 "PrU_m_sum_V(R,C)" 0 
+
+marginalize "PrL_m_sum_R,V,C" 1 "PrL_m_sum_R,V(C)" 3 
+marginalize "PrU_m_sum_R,V,C" 1 "PrU_m_sum_R,V(C)" 3 
+
+binary_operator "PrL_m_sum_-R,V,-C" - 1 "PrL_m_sum_R,V,C" "PrL_m_sum_V(R,C)"
+binary_operator "PrU_m_sum_-R,V,-C" - 1 "PrU_m_sum_R,V,C" "PrU_m_sum_V(R,C)"
+
+binary_operator "PrL_m_sum_-V(R,C)" - 1 "PrL_m_sum_V(R,C)" "PrL_m(R,V,C)"
+binary_operator "PrU_m_sum_-V(R,C)" - 1 "PrU_m_sum_V(R,C)" "PrU_m(R,V,C)"
+
+binary_operator "PrL_m(R,V,C)+PrU_m_sum_-V(R,C)" + 1 "PrL_m(R,V,C)" "PrU_m_sum_-V(R,C)"
+binary_operator "PrU_m(R,V,C)+PrL_m_sum_-V(R,C)" + 1 "PrU_m(R,V,C)" "PrL_m_sum_-V(R,C)"
+
+binary_operator "1-PrL_m_sum_-R,V,-C" - 1 "1" "PrL_m_sum_-R,V,-C"
+binary_operator "1-PrU_m_sum_-R,V,-C" - 1 "1" "PrU_m_sum_-R,V,-C"
+
+binary_operator "denominatorL(R,V,C)" min 1 "PrL_m(R,V,C)+PrU_m_sum_-V(R,C)" "1-PrL_m_sum_-R,V,-C" 
+binary_operator "denominatorU(R,V,C)" max 1 "PrU_m(R,V,C)+PrL_m_sum_-V(R,C)" "1-PrU_m_sum_-R,V,-C"
+
+binary_operator "PrL_mc(V|R,C)" / 1 "PrL_m(R,V,C)" "denominatorL(R,V,C)"
+binary_operator "PrU_mc(V|R,C)" / 1 "PrU_m(R,V,C)" "denominatorU(R,V,C)"
+
+condense "PrL_mc(V|R,C)" "PrL_mc(V|R,C)"
+condense "PrU_mc(V|R,C)" "PrU_mc(V|R,C)"
+
+print_string "Conditioned Lower bounds"
+
+print_subgraph "PrL_mc(V|R,C)"
+
+print_string "Conditioned Upper bounds"
+
+print_subgraph "PrU_mc(V|R,C)"
+
+print_string "-----------------------"
+
+condition "PrL_mc(V|r3,C)" 0 "PrL_mc(V|R,C)" 0 2
+condition "PrU_mc(V|r3,C)" 0 "PrU_mc(V|R,C)" 0 2
+
+condition "PrL_mc(V|r3,c1)" 0 "PrL_mc(V|r3,C)" 3 0
+condition "PrU_mc(V|r3,c1)" 0 "PrU_mc(V|r3,C)" 3 0
+
+condense "PrL_mc(V|r3,c1)" "PrL_mc(V|r3,c1)"
+condense "PrU_mc(V|r3,c1)" "PrU_mc(V|r3,c1)"
+
+print_subgraph "PrL_mc(V|r3,c1)"
+print_subgraph "PrU_mc(V|r3,c1)"
+
+

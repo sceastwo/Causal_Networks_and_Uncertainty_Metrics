@@ -1,0 +1,15 @@
+
+copy_subgraph "XOR_expanded" "XOR" 
+print_subgraph "XOR_expanded"
+
+
+comment
+
+expand "XOR_expanded" "XOR_expanded" 0 
+print_subgraph "XOR_expanded"
+
+comment_end
+
+
+expand "XOR_expanded" "XOR_expanded" 2 
+print_subgraph "XOR_expanded"
