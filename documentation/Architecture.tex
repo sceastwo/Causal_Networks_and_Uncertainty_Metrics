@@ -138,7 +138,35 @@ The tracing in this example proceeds as follows:
 \end{itemize}
 
 
+\subsection{sub-graph equivalence}
+
+Given a subgraphs \(G_1\) and \(G_2\), the concept of ``equivalence" between \(G_1\) and \(G_2\) will be more general than simply requiring that \(G_1\) and \(G_2\) have the same root node and hence the same set of nodes and edges. Let \(T_1 = \textbf{full\_expand}(G_1)\) denote the possibly infinite tree that is formed by ``unrolling" \(G_1\) by searching through \(G_1\) without any concern to whether nodes are being revisited. Let \(T_2 = \textbf{full\_expand}(G_2)\) denote the possibly infinite tree that is formed by ``unrolling" \(G_2\) by searching through \(G_2\) without any concern to whether nodes are being revisited. \(G_1\) and \(G_2\) are equivalent if and only if \(T_1\) and \(T_2\) have the exact same structure and values assigned to corresponding nodes.
+
+
 \subsection{product subgraphs}
+
+Binary operators that act on subgraphs \(G_1\) and \(G_2\) first require that a ``product subgraph" \(G_1 \times G_2\) be formed. If trees \(T_1 = \textbf{full\_expand}(G_1)\) and \(T_2 = \textbf{full\_expand}\) have the same structure, then the product \(T_1 \times T_2\) is a tree with the same structure as \(T_1\) and \(T_2\). The value assigned to each node from \(T_1 \times T_2\) is a \textbf{data\_pair} where the first field contains the value assigned to the corresponding node from \(T_1\) and the second field contains the value assigned to the corresponding node from \(T_2\). It is then required that the product subgraph \(G_1 \times G_2\) satisfy \(\textbf{full\_expand}(G_1 \times G_2) = T_1 \times T_2\). 
+
+If \(T_1\) does not have the same structure as \(T_2\), then the structure of \(T_1 \times T_2\) can be the union or the intersection of the structures of \(T_1\) and \(T_2\). If the union of the structures of \(T_1\) and \(T_2\) is chosen, then for a node \(n\) that exists for \(T_1\) but not for \(T_2\), the \textbf{data\_pair} assigned to \(n\) in \(T_1 \times T_2\) will use \textbf{void} as the value from \(T_2\), and vice versa. Again it is then required that the product subgraph \(G_1 \times G_2\) satisfy \(\textbf{full\_expand}(G_1 \times G_2) = T_1 \times T_2\).  
+
+An algorithm for generating the product subgraph proceeds as follows: 
+\begin{itemize}
+\item For any node \(n\); let \(\textbf{data}(n)\) denote the simple data assigned to \(n\); let \(\textbf{degree}(n)\) denote the number of children (the outwards degree of \(n\)); and for any \(i \in \{0,1,...,\textbf{degree}(n)-1\}\), let \(n[i]\) denote child \(i\). 
+%\item For any edge \(e\), let \(t_\bullet(e)\) denote the origin of edge \(e\), and let \(t^\bullet(e)\) denote the endpoint of edge \(e\). 
+\item Let \(\{n_{1,1}, n_{1,2}, ..., n_{1,k_1}\}\) denote the set of nodes from \(G_1\), and let \(\{n_{2,1}, n_{2,2}, ..., n_{2,k_2}\}\) denote the set of nodes from \(G_2\). \(n_{1,1}\) is the root node of \(G_1\), and \(n_{2,1}\) is the root node of \(G_2\). 
+\item Let \(u \in \{0,1\}\) denote a binary flag that is \(1\) if the union of the structures of \(G_1\) and \(G_2\) is being created, and is \(0\) if the intersection of the structures of \(G_1\) and \(G_2\) is being created.
+\end{itemize}
+Create a ``sink" node \(n_{1,0}\) for \(G_1\) and a ``sink" node \(n_{2,0}\). For each \(i \in \{0,1,2,...,k_1\}\) and \(j \in \{0,1,2,...,k_2\}\), create a node \(\langle n_{1,i}, n_{2,j}\rangle\). These nodes have the following properties:
+\begin{itemize}
+\item \(\textbf{data}(\langle n_{1,0}, n_{2,0}\rangle) = \langle \textbf{void}, \textbf{void} \rangle\) and \(\textbf{degree}(\langle n_{1,0}, n_{2,0}\rangle) = 0\)
+\item For each \(i \in \{0,1,2,...,k_1\}\), \(\textbf{data}(\langle n_{1,i}, n_{2,0}\rangle) = \langle \textbf{data}(n_{1,i}), \textbf{void} \rangle\); \\ \(\textbf{degree}(\langle n_{1,i}, n_{2,0}\rangle) = u \cdot \textbf{degree}(n_{1,i})\); \\ and for each \(c \in \{0,1,...,\textbf{degree}(\langle n_{1,i}, n_{2,0}\rangle)-1\}\), \(\langle n_{1,i}, n_{2,0}\rangle[c] = \langle n_{1,i}[c], n_{2,0} \rangle\).
+\item For each \(j \in \{0,1,2,...,k_2\}\), \(\textbf{data}(\langle n_{1,0}, n_{2,j}\rangle) = \langle \textbf{void}, \textbf{data}(n_{2,j}) \rangle\); \\ \(\textbf{degree}(\langle n_{1,0}, n_{2,j}\rangle) = u \cdot \textbf{degree}(n_{2,j})\); \\ and for each \(c \in \{0,1,...,\textbf{degree}(\langle n_{1,0}, n_{2,j}\rangle)-1\}\), \(\langle n_{1,0}, n_{2,j}\rangle[c] = \langle n_{1,0}, n_{2,j}[c]\rangle\). 
+\item For each \(i \in \{0,1,2,...,k_1\}\) and \(j \in \{0,1,2,...,k_2\}\), \\ \(\textbf{data}(\langle n_{1,i}, n_{2,j}\rangle) = \langle \textbf{data}(n_{1,i}), \textbf{data}(n_{2,j}) \rangle\); \\ \(\textbf{degree}(\langle n_{1,i}, n_{2,j}\rangle) = \left\{\begin{array}{cc} \text{max}(\textbf{degree}(n_{1,i}),\textbf{degree}(n_{2,j})) & (u = 1) \\ \text{min}(\textbf{degree}(n_{1,i}),\textbf{degree}(n_{2,j})) & (u = 0) \end{array}\right.\); \\ and for each \(c \in \{0,1,...,\textbf{degree}(\langle n_{1,i}, n_{2,j}\rangle)-1\}\), \\ \(\langle n_{1,i}, n_{2,j}\rangle[c] = \left\langle \left\{\begin{array}{cc} n_{1,i}[c] & (c < \textbf{degree}(n_{1,i})) \\ n_{1,0} & (c \geq \textbf{degree}(n_{1,i})) \end{array}\right., \left\{\begin{array}{cc} n_{2,j}[c] & (c < \textbf{degree}(n_{2,j})) \\ n_{2,0} & (c \geq \textbf{degree}(n_{2,j})) \end{array}\right. \right\rangle\). 
+\end{itemize}
+
+\(G_1 \times G_2\) is the subgraph rooted at \(\langle n_{1,1}, n_{2,1} \rangle\). All nodes \(\langle n_{1,i}, n_{2,j} \rangle\) that are not part of \(G_1 \times G_2\) are deleted.  
+
+Below is an example that shows the product subgraph of two subgraphs: 
 
 \begin{tabular}{cc}
 \fbox{\includegraphics[width = 0.45\textwidth]{finite_automa_1}} & 
